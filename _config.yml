@@ -5,3 +5,4 @@ relative_links:
   collections: true
 include:
   - README.md
+  - articles/bug-which-should-not-happen.md
