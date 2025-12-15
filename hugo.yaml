@@ -1,0 +1,110 @@
+baseURL: https://anatoly.dev/
+languageCode: en-us
+title: "Anatoly's Blog"
+theme: PaperMod
+
+# Main sections to show on homepage
+params:
+  description: "Sharing my expertise as a software engineer"
+  author: "Anatoly"
+
+  # Profile mode configuration
+  profileMode:
+    enabled: true
+    title: "Anatoly Tarnavsky"
+    subtitle: "Software Engineer & Tech Enthusiast"
+    imageUrl: "/images/profile.jpg"
+    imageTitle: "Profile"
+    buttons:
+      - name: "All Posts"
+        url: "/posts"
+      - name: "Projects"
+        url: "/projects"
+      - name: "About"
+        url: "/pages/about"
+      - name: "CV"
+        url: "/Anatoly_Tarnavsky_CV.pdf"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/anatoly314"
+    - name: linkedin
+      title: "LinkedIn"
+      url: "https://www.linkedin.com/in/anatolyt/"
+    - name: email
+      title: "anatolyt@gmail.com"
+      url: "mailto:anatolyt@gmail.com"
+    - name: rss
+      url: "index.xml"
+
+  # Show reading time
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+
+  # Table of contents
+  ShowToc: true
+  TocOpen: false
+
+  # Cover image settings
+  cover:
+    hiddenInList: false
+    hiddenInSingle: false
+
+  # Assets
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+
+# Menu configuration
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 1
+    - name: Projects
+      url: /projects/
+      weight: 2
+    - name: Tags
+      url: /tags/
+      weight: 3
+    - name: About
+      url: /pages/about/
+      weight: 4
+
+# Markup configuration
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: monokai
+    lineNos: false
+    noClasses: false
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Sitemap configuration
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+# Enable robots.txt
+enableRobotsTXT: true
+
+# Minify output
+minify:
+  disableXML: true
+  minifyOutput: true

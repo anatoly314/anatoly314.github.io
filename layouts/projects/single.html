@@ -1,0 +1,53 @@
+{{- define "main" }}
+
+<link rel="stylesheet" href="{{ "css/projects.css" | relURL }}?v={{ now.Unix }}">
+
+<article class="project-single">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Params.tag }}
+    <div class="project-meta">
+      <span class="project-tag-label">Tag:</span>
+      <span class="project-tag">{{ .Params.tag }}</span>
+    </div>
+    {{- end }}
+  </header>
+
+  <div class="project-description">
+    {{ .Content }}
+  </div>
+
+  {{- if .Params.tag }}
+  <section class="related-posts">
+    <h2>Related Posts</h2>
+    <div class="posts-list">
+      {{- $tag := .Params.tag }}
+      {{- $relatedPosts := where site.RegularPages "Type" "posts" }}
+      {{- $relatedPosts = where $relatedPosts ".Params.tags" "intersect" (slice $tag) }}
+      
+      {{- if $relatedPosts }}
+        {{- range $relatedPosts }}
+        <article class="post-entry">
+          <a class="post-entry-link" href="{{ .Permalink }}" aria-label="post link to {{ .Title | plainify }}"></a>
+          <header class="entry-header">
+            <h3>{{ .Title }}</h3>
+          </header>
+          {{- if not (.Param "hideSummary") }}
+          <div class="entry-content">
+            <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+          </div>
+          {{- end }}
+          <footer class="entry-footer">
+            <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+          </footer>
+        </article>
+        {{- end }}
+      {{- else }}
+        <p class="no-posts">No posts yet for this project.</p>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+</article>
+
+{{- end }}{{- /* end main */ -}}

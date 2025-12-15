@@ -1,0 +1,35 @@
+{{- define "main" }}
+
+<link rel="stylesheet" href="{{ "css/projects.css" | relURL }}?v={{ now.Unix }}">
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+<div class="projects-list">
+  {{- $projects := .RegularPages }}
+  {{- $projects = sort $projects ".Params.priority" "desc" }}
+  {{- range $projects }}
+  <article class="project-card">
+    <a class="project-link" href="{{ .Permalink }}" aria-label="project link to {{ .Title | plainify }}"></a>
+    <header class="project-header">
+      <h2 class="project-title">{{ .Title }}</h2>
+    </header>
+    <div class="project-content">
+      <p>{{ .Description }}</p>
+    </div>
+    {{- if .Params.tag }}
+    <footer class="project-footer">
+      <span class="project-tag">{{ .Params.tag }}</span>
+    </footer>
+    {{- end }}
+  </article>
+  {{- end }}
+</div>
+
+{{- end }}{{- /* end main */ -}}
