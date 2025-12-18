@@ -50,6 +50,9 @@ params:
   ShowToc: true
   TocOpen: false
 
+  # Comments (giscus)
+  comments: true
+
   # Cover image settings
   cover:
     hiddenInList: false
