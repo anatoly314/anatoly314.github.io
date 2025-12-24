@@ -5,6 +5,7 @@ draft: false
 tags: ["homelab", "kubernetes", "k3s", "devops"]
 cover:
   image: "/images/minipc-devops-journey.jpg"
+  hiddenInList: true
 ---
 
 Almost a year ago I purchased an N100-based mini PC from [AliExpress](https://www.aliexpress.com/). Initially I wanted to install only [Home Assistant](https://www.home-assistant.io/) and looked for something simple and cheap. I never thought I would need something more powerful. How wrong I was.
