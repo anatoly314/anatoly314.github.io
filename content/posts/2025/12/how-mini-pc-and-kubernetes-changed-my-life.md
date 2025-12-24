@@ -3,7 +3,6 @@ title: "How a Mini PC and Kubernetes Changed My Life"
 date: 2025-12-24T10:00:00Z
 draft: false
 tags: ["homelab", "kubernetes", "k3s", "devops"]
-description: "What started as a simple Home Assistant setup became a journey into Kubernetes and DevOps. From avoiding Kubernetes at all costs to running a homelab with 30+ services..."
 cover:
   image: "/images/minipc-devops-journey.jpg"
   hiddenInList: true
