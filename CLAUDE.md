@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Hugo-based personal blog (anatoly.dev) using the PaperMod theme. Hosted on GitHub Pages with automatic deployment via GitHub Actions.
+Hugo-based personal blog (anatoly.dev) using the PaperMod theme (git submodule). Hosted on GitHub Pages with automatic deployment via GitHub Actions.
 
 ## Commands
 
@@ -15,8 +15,8 @@ hugo server -D
 # Production build
 hugo --gc --minify
 
-# Create new blog post
-hugo new posts/YYYY/MM/post-name.md
+# Create new blog post (replace YYYY/MM with actual values)
+hugo new posts/2025/01/my-post-name.md
 ```
 
 ## Architecture
@@ -26,11 +26,15 @@ hugo new posts/YYYY/MM/post-name.md
 - `content/projects/*.md` - Project pages that link to related posts via `tag` front matter
 - `content/pages/*.md` - Static pages (about)
 
+### Project-Post Relationship
+Projects use a `tag` param (singular) to aggregate related posts. The `layouts/projects/single.html` template finds posts where their `tags` array includes the project's `tag` value.
+
 ### Layout Customizations
 Custom layouts override PaperMod theme defaults:
 - `layouts/_default/list.html` - Modified post list with tag display in post previews
 - `layouts/projects/list.html` - Card-based project listing sorted by `priority` param
 - `layouts/projects/single.html` - Project detail page showing related posts by matching `tag`
+- `layouts/partials/extend_head.html` - Umami analytics injection
 
 ### Styling
 - `assets/css/extended/theme-vars-override.css` - Theme color overrides
@@ -68,3 +72,10 @@ Push to `master` triggers GitHub Actions workflow (`.github/workflows/hugo.yml`)
 2. Deploys to GitHub Pages
 
 PaperMod requires Hugo >= 0.146.0 - check `HUGO_VERSION` in workflow if updating.
+
+## Theme Updates
+
+PaperMod is a git submodule in `themes/PaperMod`. To update:
+```bash
+git submodule update --remote themes/PaperMod
+```
