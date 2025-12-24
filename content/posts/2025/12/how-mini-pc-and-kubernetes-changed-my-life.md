@@ -8,7 +8,7 @@ cover:
   hiddenInList: true
 ---
 
-Almost a year ago I purchased an N100-based mini PC from [AliExpress](https://www.aliexpress.com/). Initially I wanted to install only [Home Assistant](https://www.home-assistant.io/) and looked for something simple and cheap. I never thought I would need something more powerful. How wrong I was.
+Almost a year ago I purchased a [Beelink Mini S12 Pro](https://s.click.aliexpress.com/e/_c2JptJAl) (N100-based mini PC) from AliExpress. Initially I wanted to install only [Home Assistant](https://www.home-assistant.io/) and looked for something simple and cheap. I never thought I would need something more powerful. How wrong I was.
 
 Initially I planned to install HA OS, but then thought that installing it using a container and [docker-compose](https://docs.docker.com/compose/) would give me more room to test and debug. I knew that if something broke, it would be much easier to restore than using HA OS.
 
