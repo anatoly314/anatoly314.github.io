@@ -35,11 +35,15 @@ Custom layouts override PaperMod theme defaults:
 - `layouts/projects/list.html` - Card-based project listing sorted by `priority` param
 - `layouts/projects/single.html` - Project detail page showing related posts by matching `tag`
 - `layouts/partials/extend_head.html` - Umami analytics injection
+- `layouts/partials/comments.html` - Giscus comments integration
 
 ### Styling
 - `assets/css/extended/theme-vars-override.css` - Theme color overrides
 - `static/css/projects.css` - Project-specific styles
 - `static/layout/tags.css` - Tag styling for post lists
+
+### Markdown Features
+Raw HTML is allowed in markdown content (goldmark unsafe mode enabled).
 
 ## Content Conventions
 
@@ -50,6 +54,9 @@ title: "Post Title"
 date: 2025-08-23T10:00:00Z
 draft: false
 tags: ["tag1", "tag2"]
+cover:                      # Optional
+  image: "/images/my-image.jpg"
+  hiddenInList: true        # Hide cover in post list, show only in article
 ---
 ```
 
