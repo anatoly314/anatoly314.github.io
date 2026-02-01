@@ -30,7 +30,7 @@ To set up a smart home, we need to decide on the three pillars it's built on: **
 
 Why do we need a protocol? A protocol is a kind of language that all the devices use to communicate with each other. You can mix protocols, but honestly, if you have no special reason to do so, don't. It's much easier to maintain devices that all use the same protocol.
 
-There are three main protocols: Zigbee, BLE (Bluetooth Low Energy), and Wi-Fi. Some manufacturers use Wi-Fi, some use BLE, but the most widely adopted protocol is called **Zigbee**. It was designed intentionally for IoT (Internet of Things).
+There are three main protocols: Zigbee, BLE (Bluetooth Low Energy), and Wi-Fi. Some manufacturers use Wi-Fi, some use BLE, but the most widely adopted protocol is called **[Zigbee](https://en.wikipedia.org/wiki/Zigbee)**. It was designed intentionally for IoT (Internet of Things).
 
 What makes Zigbee unique? Three things: low electricity consumption, resilience to Wi-Fi interference, and mesh networking. Let's dig into the details:
 
@@ -48,7 +48,7 @@ So, I think I've convinced you that **Zigbee is the best choice**.
 
 A platform is the software used to configure all the devices, define different scenarios, set up automation, and so on. It defines how easy your smart home is to use.
 
-There are many platforms—for example, Xiaomi, Tuya, and Home Assistant. Without doubt, **Home Assistant** is the best. It's an open-source platform, so anyone with technical knowledge can write advanced scenarios and configure it to their needs. It also supports the vast majority of IoT devices. But as I said, it requires technical knowledge: you manually write scripts, you must read logs, and you need to be able to debug complex issues. So if you don't have a technical background and want something you can quickly set up and use, I would advise against starting with it. (Note: Home Assistant can run on a Raspberry Pi or similar small computer.)
+There are many platforms—for example, Xiaomi, [Tuya](https://www.tuya.com/), and [Home Assistant](https://www.home-assistant.io/). Without doubt, **Home Assistant** is the best. It's an open-source platform, so anyone with technical knowledge can write advanced scenarios and configure it to their needs. It also supports the vast majority of IoT devices. But as I said, it requires technical knowledge: you manually write scripts, you must read logs, and you need to be able to debug complex issues. So if you don't have a technical background and want something you can quickly set up and use, I would advise against starting with it. (Note: Home Assistant can run on a Raspberry Pi or similar small computer.)
 
 Xiaomi, on the other hand, is much more user-friendly. But from my personal experience, I didn't like the UX it provided. Another issue I found with Xiaomi is limited device availability—usually when I was looking for something like an IR blaster, Xiaomi didn't have it.
 
