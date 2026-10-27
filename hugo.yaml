@@ -53,6 +53,9 @@ params:
   # Comments (giscus)
   comments: true
 
+  # Base URL of the israeli-gis map (its own GitHub Pages site), used by the israel-map shortcode
+  israeliGisURL: "https://anatoly.dev/israeli-gis/"
+
   # Cover image settings
   cover:
     hiddenInList: false

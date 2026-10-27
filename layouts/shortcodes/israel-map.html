@@ -1,0 +1,17 @@
+{{- /* Usage: {{< israel-map layer="..." lang="en" hl="4-7" view="9/32.08/34.78" height="650" >}} */ -}}
+{{- $base := site.Params.israeliGisURL | default "https://anatoly.dev/israeli-gis/" -}}
+{{- $q := dict "lang" (.Get "lang" | default "en") -}}
+{{- with .Get "layer" }}{{ $q = merge $q (dict "layer" .) }}{{ end -}}
+{{- with .Get "hl" }}{{ $q = merge $q (dict "hl" .) }}{{ end -}}
+{{- $hash := "" -}}
+{{- with .Get "view" }}{{ $hash = printf "#%s" . }}{{ end -}}
+{{- $full := printf "%s?%s%s" ("/maps/israel/" | relURL) (collections.Querify $q) $hash -}}
+{{- $embed := printf "%s?%s%s" $base (collections.Querify (merge $q (dict "embed" "1"))) $hash -}}
+<figure class="israel-map">
+  <iframe src="{{ $embed }}"
+          title="{{ .Get "title" | default "Interactive map of Israel" }}"
+          loading="lazy"
+          style="width:100%;height:min({{ .Get "height" | default "650" }}px,70vh);border:0;border-radius:var(--radius)"
+          allow="fullscreen"></iframe>
+  <figcaption><a href="{{ $full }}">Open full-screen map ↗</a></figcaption>
+</figure>
