@@ -75,7 +75,7 @@ priority: 100           # Higher = appears first in list
 ## Deployment
 
 Push to `master` triggers GitHub Actions workflow (`.github/workflows/hugo.yml`) which:
-1. Builds with Hugo extended v0.152.2
+1. Builds with Hugo extended v0.163.0
 2. Deploys to GitHub Pages
 
 PaperMod requires Hugo >= 0.146.0 - check `HUGO_VERSION` in workflow if updating.
